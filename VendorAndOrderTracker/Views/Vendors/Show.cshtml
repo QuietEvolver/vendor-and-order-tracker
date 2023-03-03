@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@* <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -16,19 +16,19 @@
       <ol>
         @foreach (Order order in @Model["orders"])
         {
-          <li><a href='/categories/@Model["category"].Id/orders/@order.Id'>@order.Description</a></li>
+          <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
         }
       </ol>
     </h3>
 
-    <p><a href = '/categories/@Model["category"].Id/orders/new'>Add New Order</a></p>
-    <p><a href="categories">Return to Venors</a></p>
+    <p><a href = '/vendors/@Model["vendor"].Id/orders/new'>Add New Order</a></p>
+    <p><a href="vendors">Return to Vednors</a></p>
 
   @foreach (Order order in @Model["orders"])
   {
-    <li><a href='/categories/@Model["category"],Id/orders/@order.Id'>@order.Description</a></li>
+    <li><a href='/vendors/@Model["vendor"],Id/orders/@order.Id'>@order.Description</a></li>
   }
 
     <p><a href="/">Return to main page/home</a></p>
   </body>
-</html>
+</html> *@
