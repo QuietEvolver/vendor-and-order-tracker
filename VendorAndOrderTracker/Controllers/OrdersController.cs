@@ -6,23 +6,23 @@ namespace VendorAndOrderTracker.Controllers
 {
   public class OrdersController : Controller
   {
-    // // all routes now are Parent:Category/chilren Items 
-    // [HttpGet("/vendors/{vendorId}/orders/new")]
-    // public ActionResult New(int vendorId)
-    // {
-    //   Vendor vendor = Vendor.Find(vendorId);
-    //   return View(vendor);
-    // }
+    // all routes now are Parent:Vendor/children Orders 
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
+    }
 
-    // [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
-    // public ActionResult Show(int vendorId, int orderId)
-    // {
-    //   Order order = Order.Find(orderId);
-    //   Vendor vendor = Vendor.Find(vendorId);
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   model.Add("order", order);
-    //   model.Add("vendor", vendor);
-    //   return View(model);
-    // }
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
+    }
   }
 }
