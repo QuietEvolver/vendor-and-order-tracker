@@ -7,11 +7,32 @@ namespace VendorAndOrderTracker.Models
     private static List<Vendor> _instances = new List<Vendor>{};
     public string Name { get; set; }
     public List<Order> Orders { get; set; }  
+    public int Id { get; }
     public Vendor(string vendorName)
     {
       Name = vendorName;
       _instances.Add(this);
-      Items = new List<Order>{};
+      Id = _instances.Count;
+      Orders = new List<Order>{};
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
+    }
+    public static Category Find(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
     }
   }
 }
