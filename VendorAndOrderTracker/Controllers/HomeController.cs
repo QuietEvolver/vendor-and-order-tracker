@@ -11,11 +11,11 @@ namespace VendorAndOrderTracker.Controllers
         return View();
       }
       
-      // Pictures: <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
-      [Route("/favorite_photos")]
-      public ActionResult FavoritePhotos()
-      {
-        return View();
-      }
+      // // Pictures: <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+      // [Route("/favorite_photos")]
+      // public ActionResult FavoritePhotos()
+      // {
+      //   return View();
+      // }
     }
 }

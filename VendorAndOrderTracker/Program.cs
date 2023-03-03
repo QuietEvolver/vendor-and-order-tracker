@@ -16,7 +16,7 @@ namespace VendorAndOrderTracker
     //   app.UseDeveloperExceptionPage();
       app.UseHttpsRedirection();
       // use static files for pictures
-      app.UseStaticFiles();
+      // app.UseStaticFiles();
       app.UseRouting();
 
       app.MapControllerRoute(
