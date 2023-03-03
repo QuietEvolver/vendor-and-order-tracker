@@ -29,8 +29,8 @@ For example, Pierre might supply croissants to a vendor called "Suzie's Cafe" on
 
 ## Setup/Installation Requirements
 
-* Clone this repository on your desktop
-* Navigate to the main project located in ../BakerySeller.Solution/BakerySeller using bash or cmd
+* Clone this [repository](https://github.com/QuietEvolver/vendor-and-order-tracker.git) on your desktop
+* Navigate to the main project located in ../VendorAndOrderTracker.Solution/VendorAndOrderTracker using bash or cmd
 * Use ``` dotnet restore ``` to install/restore dependencies.
 * For Building, use ```dotnet build```
 * For running the console application, use ```dotnet run```
