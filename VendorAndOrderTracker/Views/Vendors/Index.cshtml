@@ -12,18 +12,24 @@
   </head>
   <body>
     <h1>Welcome to the Vendors Page!</h1>
-    <p>Add a Vendor:</p>
+    @using VendorAndOrderTracker.Models;
 
-      <form action="/vendors" method="post">
-      <label for="vendorName"> Vendor Name</label>
-      <input id="vendorName" for="vendorName" type="text"> Vendor Name</input>
-      <button type="submit">Add</button>
-    </form>
+    <h1>Vendors</h1>
 
-    <a href='/'>Home</a>
+    @if (@Model.Count == 0)
+    {
+      <h3>No vendors yet added.</h3>
+    } 
+
+    @foreach (Vendor vendor in Model)
+    {
+      <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+    }
+
+    <p><a href='/'>Home</a></p>
     <br>
-    <a href='/vendors'>See Vendors</a>
-@*   
+  @*   <p></p><a href='/vendors'>See Vendors</a></p>
+  
   @{
   Layout = "_Layout";
 } *@

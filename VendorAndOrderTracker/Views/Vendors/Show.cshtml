@@ -21,14 +21,8 @@
       </ol>
     </h3>
 
-    <p><a href = '/vendors/@Model["vendor"].Id/orders/new'>Add New Order</a></p>
-    <p><a href="vendors">Return to Vednors</a></p>
-
-  @foreach (Order order in @Model["orders"])
-  {
-    <li><a href='/vendors/@Model["vendor"],Id/orders/@order.Id'>@order.Description</a></li>
-  }
-
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+    <p><a href='/vendors'>Return to vendor list</a></p>
     <p><a href="/">Return to main page/home</a></p>
   </body>
 </html>
