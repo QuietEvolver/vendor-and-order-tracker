@@ -10,9 +10,8 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <h1>Add new item to @Model.Name</h1>
+    <h1>Add new order to @Model.Name</h1>
     <form action="/vendors/@Model.Id/orders" method="post">
-    @* quietly  pass the Vendor ID alongside the user's form input to the Create() *@
       <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
       <label for="orderDescription">Order Description: </label>
       <input id="orderDescription" name="orderDescription" type="text">
