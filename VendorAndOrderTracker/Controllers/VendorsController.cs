@@ -27,6 +27,17 @@ namespace VendorAndOrderTracker.Controllers
       Vendor newVendor = new Vendor(vendorName);
       return RedirectToAction("Index");
     }
+    // so a user can click an individual Vendor from the list of all vendors and navigate to a detail page displaying its information, including a list of the Orders associated with it. 
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("category", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
+    }
 
 // This one creates new Orders within a given Vendor, not new vendors:
     [HttpPost("/vendors/{vendorId}/orders")]
@@ -40,17 +51,6 @@ namespace VendorAndOrderTracker.Controllers
       model.Add("Orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
-    }
-    // so a user can click an individual Vendor from the list of all vendors and navigate to a detail page displaying its information, including a list of the Orders associated with it. 
-    [HttpGet("/vendors/{id}")]
-    public ActionResult Show(int id)
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectedVendor = Vendor.Find(id);
-      List<Order> vendorOrders = selectedVendor.Orders;
-      model.Add("category", selectedVendor);
-      model.Add("orders", vendorOrders);
-      return View(model);
     }
   }
 }
